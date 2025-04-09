@@ -1,122 +1,94 @@
-🚀 API de Productos con FastAPI
+# 🚀 API de Productos con FastAPI
 API RESTful para la gestión de productos con autenticación JWT, desarrollada con FastAPI y PostgreSQL.
 
-📋 Requisitos
+## 📋 Requisitos
 Python 3.10+
 
 PostgreSQL
-
 Pip
 
-🛠 Instalación
-Clona el repositorio:
-
-bash
-Copiar
-Editar
+## 🛠 Instalación
+### Clona el repositorio:
+```
 git clone https://github.com/1Nath00/FastApi-products.git
 cd FastApi-products
-Crea y activa un entorno virtual:
-
-bash
-Copiar
-Editar
+```
+### Crea y activa un entorno virtual:
+```
 python -m venv venv
 # Linux / Mac
 source venv/bin/activate
 # Windows
 venv\Scripts\activate
-Instala las dependencias:
-
-nginx
-Copiar
-Editar
+```
+### Instala las dependencias:
+```
 pip install -r requirements.txt
-Configura la base de datos:
+```
+### Configura la base de datos:
 
-Crea un archivo .env basado en .env.example.
+Crea un archivo .env.
 
 Asegúrate de que PostgreSQL esté corriendo.
 
-Ejecuta las migraciones:
-
-nginx
-Copiar
-Editar
-python -c "from database import Base, engine; Base.metadata.create_all(bind=engine)"
-▶️ Ejecución Local
+## ▶️ Ejecución Local
 Para correr el proyecto en modo desarrollo:
 
-css
-Copiar
-Editar
+```
 uvicorn main:app --reload
+```
 La API estará disponible en:
+
 http://127.0.0.1:8000
 
-📚 Documentación Interactiva
+# 📚 Documentación Interactiva
 Swagger UI: http://127.0.0.1:8000/docs
 
 ReDoc: http://127.0.0.1:8000/redoc
 
-🌐 Endpoints
+# 🌐 Endpoints
 Productos
-GET /productos → Lista todos los productos
 
-GET /producto/{id} → Obtiene un producto específico
+`GET /productos` → Lista todos los productos
 
-POST /productos → Crea un nuevo producto
+`GET /producto/{id}` → Obtiene un producto específico
 
-PUT /producto/{id} → Actualiza todos los campos de un producto
+`POST /productos` → Crea un nuevo producto
 
-PATCH /producto/{id} → Actualiza campos específicos de un producto
+`PUT /producto/{id}` → Actualiza todos los campos de un producto
 
-DELETE /producto/{id} → Elimina un producto
+`PATCH /producto/{id}` → Actualiza campos específicos de un producto
 
-📦 Estructura del Proyecto
-bash
-Copiar
-Editar
+`DELETE /producto/{id}` → Elimina un producto
+
+## 📦 Estructura del Proyecto
+```
 FastApi-products/
 ├── main.py            # Punto de entrada principal
 ├── database.py        # Configuración de la base de datos
-├── models/            # Modelos de SQLAlchemy
-│   └── productos.py
+├── models.py            # Modelos de SQLAlchemy
 ├── dtos.py            # Esquemas Pydantic
 ├── services.py        # Lógica de negocio
 ├── requirements.txt   # Dependencias
-└── .env.example       # Variables de entorno de ejemplo
-📄 Ejemplos de Requests
+```
+
+## 📄 Ejemplos de Requests
+
 Crear producto
-makefile
-Copiar
-Editar
+```
 curl -X POST "http://localhost:8000/productos" \
 -H "Content-Type: application/json" \
 -d '{"nombre": "Laptop", "precio": 1200.99, "cantidad_stock": 10}'
+```
+
 Obtener todos los productos
-nginx
-Copiar
-Editar
+
+```
 curl "http://localhost:8000/productos"
-🛡️ Variables de Entorno
-Variable	Descripción	Valor por defecto
-DATABASE_URL	URL de conexión a PostgreSQL	sqlite:///./sql_app.db (ejemplo)
-PORT	Puerto donde corre la aplicación	8000
-🚢 Despliegue en Railway
-Haz fork de este repositorio.
+```
+## 🛡️ Variables de Entorno
+| Variable      | Descripción                      | Valor por defecto         |
+|---------------|----------------------------------|----------------------------|
+| `DATABASE_URL`| URL de conexión a PostgreSQL     | `sqlite:///./sql_app.db`  |
+| `PORT`        | Puerto donde corre la aplicación | `8000`                    |
 
-Conecta tu cuenta de GitHub a Railway.
-
-Selecciona el repositorio desde el dashboard de Railway.
-
-Railway detectará automáticamente la configuración.
-
-Añade el plugin de PostgreSQL en Railway.
-
-Crea un archivo .env en Railway con las variables necesarias.
-
-¡Listo! La API se desplegará automáticamente.
-
-📜 Licencia
-Este proyecto está bajo la licencia MIT.
