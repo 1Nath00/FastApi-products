@@ -48,6 +48,7 @@ ReDoc: http://127.0.0.1:8000/redoc
 
 # 🌐 Endpoints
 Productos
+
 `GET /productos` → Lista todos los productos
 
 `GET /producto/{id}` → Obtiene un producto específico
