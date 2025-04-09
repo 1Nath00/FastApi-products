@@ -92,3 +92,30 @@ curl "http://localhost:8000/productos"
 | `DATABASE_URL`| URL de conexión a PostgreSQL     | `sqlite:///./sql_app.db`  |
 | `PORT`        | Puerto donde corre la aplicación | `8000`                    |
 
+## 🚢 Despliegue en Heroku
+Este proyecto fue desplegado exitosamente en Heroku, conectado al repositorio de GitHub.
+
+🔗 Repositorio conectado a Heroku
+
+🌱 Rama conectada: master
+
+🛠 Heroku detecta automáticamente el entorno Python y usa requirements.txt
+
+🧩 Base de datos PostgreSQL añadida desde los addons de Heroku
+
+Pasos generales para despliegue:
+
+Crear una app en Heroku
+
+Conectar GitHub desde el dashboard de Heroku
+
+Elegir la rama master para deploy
+
+Habilitar el deploy automático
+
+Añadir variables de entorno en el panel de configuración
+
+Agregar el addon de PostgreSQL
+
+Heroku instalará dependencias y levantará el servidor
+
