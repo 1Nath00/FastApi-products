@@ -13,8 +13,11 @@ Clona el repositorio:
 bash
 Copiar
 Editar
+
 git clone https://github.com/1Nath00/FastApi-products.git
+
 cd FastApi-products
+
 Crea y activa un entorno virtual:
 
 bash
