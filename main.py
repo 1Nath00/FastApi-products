@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends
 from typing import  Annotated
+import os
 
 import models
 import services
@@ -43,3 +44,7 @@ def patch_producto(id: int, producto: UpdateProducto, db: db_denpency):
 @app.delete("/producto/{id}")
 def delete_producto(id: int, db: db_denpency):
     return services.delete(id, db)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
