@@ -85,9 +85,7 @@ FastApi-products/
 
 ├── database.py        # Configuración de la base de datos
 
-├── models/            # Modelos de SQLAlchemy
-
-│   └── productos.py
+├── models.py            # Modelos de SQLAlchemy
 
 ├── dtos.py            # Esquemas Pydantic
 
@@ -95,7 +93,6 @@ FastApi-products/
 
 ├── requirements.txt   # Dependencias
 
-└── .env.example       # Variables de entorno de ejemplo
 
 
 ## 📄 Ejemplos de Requests
