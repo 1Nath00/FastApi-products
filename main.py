@@ -7,6 +7,7 @@ import services
 from dtos import CreatedProducto, UpdateProducto
 from database import SessionLocal, engine
 from sqlalchemy.orm import Session
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
@@ -20,6 +21,13 @@ def get_db():
         db.close()
 
 db_denpency = Annotated[Session, Depends(get_db)]
+
+@app.get("/", response_class=HTMLResponse)
+def root():
+    html_path = os.path.join(os.path.dirname(__file__), "templates", "index.html")
+    with open(html_path, "r", encoding="utf-8") as file:
+        html_content = file.read()
+    return html_content
 
 @app.get("/productos")
 def get_productos(db: db_denpency):
