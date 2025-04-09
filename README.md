@@ -8,52 +8,37 @@ PostgreSQL
 Pip
 
 ## 🛠 Instalación
-Clona el repositorio:
-
-bash
-Copiar
-Editar
-
+### Clona el repositorio:
+```
 git clone https://github.com/1Nath00/FastApi-products.git
-
 cd FastApi-products
-
-Crea y activa un entorno virtual:
-
-bash
-Copiar
-Editar
+```
+### Crea y activa un entorno virtual:
+```
 python -m venv venv
 # Linux / Mac
 source venv/bin/activate
 # Windows
 venv\Scripts\activate
-Instala las dependencias:
-
-nginx
-Copiar
-Editar
+```
+### Instala las dependencias:
+```
 pip install -r requirements.txt
-Configura la base de datos:
+```
+### Configura la base de datos:
 
-Crea un archivo .env basado en .env.example.
+Crea un archivo .env.
 
 Asegúrate de que PostgreSQL esté corriendo.
 
-Ejecuta las migraciones:
-
-nginx
-Copiar
-Editar
-python -c "from database import Base, engine; Base.metadata.create_all(bind=engine)"
-▶️ Ejecución Local
+## ▶️ Ejecución Local
 Para correr el proyecto en modo desarrollo:
 
-css
-Copiar
-Editar
+```
 uvicorn main:app --reload
+```
 La API estará disponible en:
+
 http://127.0.0.1:8000
 
 # 📚 Documentación Interactiva
@@ -63,68 +48,46 @@ ReDoc: http://127.0.0.1:8000/redoc
 
 # 🌐 Endpoints
 Productos
-GET /productos → Lista todos los productos
+`GET /productos` → Lista todos los productos
 
-GET /producto/{id} → Obtiene un producto específico
+`GET /producto/{id}` → Obtiene un producto específico
 
-POST /productos → Crea un nuevo producto
+`POST /productos` → Crea un nuevo producto
 
-PUT /producto/{id} → Actualiza todos los campos de un producto
+`PUT /producto/{id}` → Actualiza todos los campos de un producto
 
-PATCH /producto/{id} → Actualiza campos específicos de un producto
+`PATCH /producto/{id}` → Actualiza campos específicos de un producto
 
-DELETE /producto/{id} → Elimina un producto
+`DELETE /producto/{id}` → Elimina un producto
 
 ## 📦 Estructura del Proyecto
-bash
-Copiar
-Editar
+```
 FastApi-products/
-
 ├── main.py            # Punto de entrada principal
-
 ├── database.py        # Configuración de la base de datos
-
 ├── models.py            # Modelos de SQLAlchemy
-
 ├── dtos.py            # Esquemas Pydantic
-
 ├── services.py        # Lógica de negocio
-
 ├── requirements.txt   # Dependencias
-
-
+```
 
 ## 📄 Ejemplos de Requests
 
 Crear producto
-
-makefile
-
-Copiar
-
-Editar
-
+```
 curl -X POST "http://localhost:8000/productos" \
-
 -H "Content-Type: application/json" \
-
 -d '{"nombre": "Laptop", "precio": 1200.99, "cantidad_stock": 10}'
+```
 
 Obtener todos los productos
 
-nginx
-
-Copiar
-
-Editar
-
+```
 curl "http://localhost:8000/productos"
-
+```
 ## 🛡️ Variables de Entorno
+| Variable      | Descripción                      | Valor por defecto         |
+|---------------|----------------------------------|----------------------------|
+| `DATABASE_URL`| URL de conexión a PostgreSQL     | `sqlite:///./sql_app.db`  |
+| `PORT`        | Puerto donde corre la aplicación | `8000`                    |
 
-Variable	Descripción	Valor por defecto
-
-DATABASE_URL	URL de conexión a PostgreSQL	sqlite:///./sql_app.db (ejemplo)
-
-PORT	Puerto donde corre la aplicación	8000
