@@ -1,14 +1,13 @@
-🚀 API de Productos con FastAPI
+# 🚀 API de Productos con FastAPI
 API RESTful para la gestión de productos con autenticación JWT, desarrollada con FastAPI y PostgreSQL.
 
-📋 Requisitos
+## 📋 Requisitos
 Python 3.10+
 
 PostgreSQL
-
 Pip
 
-🛠 Instalación
+## 🛠 Instalación
 Clona el repositorio:
 
 bash
@@ -54,12 +53,12 @@ uvicorn main:app --reload
 La API estará disponible en:
 http://127.0.0.1:8000
 
-📚 Documentación Interactiva
+# 📚 Documentación Interactiva
 Swagger UI: http://127.0.0.1:8000/docs
 
 ReDoc: http://127.0.0.1:8000/redoc
 
-🌐 Endpoints
+# 🌐 Endpoints
 Productos
 GET /productos → Lista todos los productos
 
@@ -73,50 +72,59 @@ PATCH /producto/{id} → Actualiza campos específicos de un producto
 
 DELETE /producto/{id} → Elimina un producto
 
-📦 Estructura del Proyecto
+## 📦 Estructura del Proyecto
 bash
 Copiar
 Editar
 FastApi-products/
+
 ├── main.py            # Punto de entrada principal
+
 ├── database.py        # Configuración de la base de datos
+
 ├── models/            # Modelos de SQLAlchemy
+
 │   └── productos.py
+
 ├── dtos.py            # Esquemas Pydantic
+
 ├── services.py        # Lógica de negocio
+
 ├── requirements.txt   # Dependencias
+
 └── .env.example       # Variables de entorno de ejemplo
-📄 Ejemplos de Requests
+
+
+## 📄 Ejemplos de Requests
+
 Crear producto
+
 makefile
+
 Copiar
+
 Editar
+
 curl -X POST "http://localhost:8000/productos" \
+
 -H "Content-Type: application/json" \
+
 -d '{"nombre": "Laptop", "precio": 1200.99, "cantidad_stock": 10}'
+
 Obtener todos los productos
+
 nginx
+
 Copiar
+
 Editar
+
 curl "http://localhost:8000/productos"
-🛡️ Variables de Entorno
+
+## 🛡️ Variables de Entorno
+
 Variable	Descripción	Valor por defecto
+
 DATABASE_URL	URL de conexión a PostgreSQL	sqlite:///./sql_app.db (ejemplo)
+
 PORT	Puerto donde corre la aplicación	8000
-🚢 Despliegue en Railway
-Haz fork de este repositorio.
-
-Conecta tu cuenta de GitHub a Railway.
-
-Selecciona el repositorio desde el dashboard de Railway.
-
-Railway detectará automáticamente la configuración.
-
-Añade el plugin de PostgreSQL en Railway.
-
-Crea un archivo .env en Railway con las variables necesarias.
-
-¡Listo! La API se desplegará automáticamente.
-
-📜 Licencia
-Este proyecto está bajo la licencia MIT.
