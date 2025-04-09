@@ -119,3 +119,7 @@ Agregar el addon de PostgreSQL
 
 Heroku instalará dependencias y levantará el servidor
 
+
+## Autores
+#### Andres Felipe Cabal Correa
+#### Natalia Gomez Delacruz
